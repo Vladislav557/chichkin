@@ -1,6 +1,6 @@
 {
   "name": "chichkin",
-  "version": "0.0.9",
+  "version": "0.0.10",
   "description": "This package was created for create basic structure of project",
   "main": "dist/bin/index.js",
   "bin": {
