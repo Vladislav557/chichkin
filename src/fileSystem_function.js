@@ -23,7 +23,7 @@ export default () => {
         cb(err, {message: "Директории dist/bin созданы"});
     });
 
-    fs.mkdir('./src', {recursive: true}, (err) => {
+    fs.mkdir('./src/bin', {recursive: true}, (err) => {
         cb(err, { message: "Папка src создана" });
 
         fs.writeFile('src/bin/index.js', '', (err) => {
