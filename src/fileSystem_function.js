@@ -19,8 +19,13 @@ const func = () => {
 };
 
 export default () => {
-    fs.mkdir('./dist', {recursive: true}, (err) => {
-        cb(err, {message: "Папка dist создана"});
+    fs.mkdir('./dist/bin', {recursive: true}, (err) => {
+        cb(err, {message: "Директории dist/bin созданы"});
+        
+        fs.writeFile('src/bin/index.js', '', (err) => {
+            if (err) throw err;
+            console.log('The file has been saved!');
+          });
     });
 
     fs.mkdir('./src', {recursive: true}, (err) => {
@@ -36,11 +41,6 @@ export default () => {
     fs.appendFile("babel.config.js", "module.exports = {presets: [[\"@babel/env\",{targets:{node: \"current\",firefox: \"60\",chrome: \"67\",safary: \"11.1\",},}],],}", (err) => {
         cb(err, { message: 'Создан babel.config.js' });
     });
-
-    fs.writeFile('src/bin/index.js', '', (err) => {
-        if (err) throw err;
-        console.log('The file has been saved!');
-      });
 
     setTimeout(func, 1000);
 };
