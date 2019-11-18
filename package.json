@@ -3,8 +3,13 @@
   "version": "0.0.1",
   "description": "This package was created for create basic structure of project",
   "main": "dist/bin/index.js",
+  "bin": {
+    "makeStruc": "dist/bin/index.js"
+  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "NODE_ENV=production babel src --out-dir dist",
+    "prepublishOnly": "npm run build"
   },
   "repository": {
     "type": "git",
@@ -15,6 +20,9 @@
   "bugs": {
     "url": "https://github.com/Vladislav557/chihckin/issues"
   },
+  "files": [
+    "dist"
+  ],
   "homepage": "https://github.com/Vladislav557/chihckin#readme",
   "devDependencies": {
     "@babel/cli": "^7.7.0",
