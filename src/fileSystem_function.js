@@ -37,6 +37,11 @@ export default () => {
         cb(err, { message: 'Создан babel.config.js' });
     });
 
+    fs.writeFile('src/bin/index.js', '', (err) => {
+        if (err) throw err;
+        console.log('The file has been saved!');
+      });
+
     setTimeout(func, 1000);
 };
 
