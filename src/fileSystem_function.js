@@ -32,7 +32,7 @@ export default () => {
           });
     });
 
-    fs.writeFile('.gitignore', 'dist', (err1) => {
+    fs.writeFile('.gitignore', 'dist \n', (err1) => {
         fs.appendFile('.gitignore', 'node_modules', (err2) => {
             cb(err1 + err2, { message: '.gitignore создан' });
         });
