@@ -8,20 +8,11 @@ const func = () => {
             return;
         } 
         const packageObj = JSON.parse(data);
-        const updateData = JSON.stringify({ ...packageObj, "files": ["dist"] });
-        fs.writeFile('package.json', updateData, (err) => {
-            if (err) {
-                console.log(err);
-                return;
-            }
-        });
-        
-        const scripts = { "scripts": {
+        const updateData = JSON.stringify({ ...packageObj, "files": ["dist"], "scripts": {
             "build": "NODE_ENV=production babel src --out-dir dist",
             "prepublishOnly": "npm run build"
-        }};
-        const newUpdateData = JSON.stringify(...packageObj, ...scripts);
-        fs.writeFile('package.json', newUpdateData, (err) => {
+        }});
+        fs.writeFile('package.json', updateData, (err) => {
             if (err) {
                 console.log(err);
                 return;
