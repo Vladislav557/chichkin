@@ -15,6 +15,18 @@ const func = () => {
                 return;
             }
         });
+        
+        const scripts = { "scripts": {
+            "build": "NODE_ENV=production babel src --out-dir dist",
+            "prepublishOnly": "npm run build"
+        }};
+        const newUpdateData = JSON.stringify(...packageObj, ...scripts);
+        fs.writeFile('package.json', newUpdateData, (err) => {
+            if (err) {
+                console.log(err);
+                return;
+            }
+        });
     });
 };
 

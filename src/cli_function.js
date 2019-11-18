@@ -27,5 +27,9 @@ export default () => {
     childProcess.exec('npm install --save-dev @babel/preset-env', (error, stdout, stderr) => {
         cb(error, { stdout, stderr, message: "@babel/preset-env installed"});
     });
+    // npm install --save-dev eslint
+    childProcess.exec('npm install --save-dev eslint', (error, stdout, stderr) => {
+        cb(error, { stdout, stderr, message: "eslint installed" });
+    });
 
 };
