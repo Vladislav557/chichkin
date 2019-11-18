@@ -33,6 +33,10 @@ export default () => {
         });
     });
 
+    fs.appendFile("babel.config.js", "module.exports = {presets: [[\"@babel/env\",{targets:{node: \"current\",firefox: \"60\",chrome: \"67\",safary: \"11.1\",},}],],}", (err) => {
+        cb(err, { message: 'Создан babel.config.js' });
+    });
+
     setTimeout(func, 1000);
 };
 
