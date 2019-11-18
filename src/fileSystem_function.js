@@ -21,15 +21,15 @@ const func = () => {
 export default () => {
     fs.mkdir('./dist/bin', {recursive: true}, (err) => {
         cb(err, {message: "Директории dist/bin созданы"});
-        
-        fs.writeFile('src/bin/index.js', '', (err) => {
-            if (err) throw err;
-            console.log('The file has been saved!');
-          });
     });
 
     fs.mkdir('./src', {recursive: true}, (err) => {
         cb(err, { message: "Папка src создана" });
+
+        fs.writeFile('src/bin/index.js', '', (err) => {
+            if (err) throw err;
+            console.log('The file has been saved!');
+          });
     });
 
     fs.writeFile('.gitignore', 'dist', (err1) => {
