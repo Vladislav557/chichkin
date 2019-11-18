@@ -1,7 +1,15 @@
 {
   "name": "chichkin",
-  "version": "0.0.10",
+  "version": "0.0.11",
   "description": "This package was created for create basic structure of project",
+  "keywords": [
+    "chichka",
+    "createProject",
+    "babel",
+    "eslint",
+    "structure",
+    "project" 
+  ],
   "main": "dist/bin/index.js",
   "bin": {
     "makeStruc": "dist/bin/index.js"
