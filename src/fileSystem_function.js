@@ -10,7 +10,7 @@ export default () => {
         .then(() => console.log("Директория dist создана"))
         .catch((error) => console.log(error));
 
-    fs.mkdir('src/bin')
+    fs.mkdir('src/bin', { recursive: true })
         .then(() => {
             fs.writeFile('src/bin/index.js', '')
                 .then(() => console.log('index.js создан'))
