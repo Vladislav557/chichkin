@@ -18,7 +18,7 @@ export default () => {
                 .catch((error) => console.log(error));
         }).catch((error) => console.log(error));
 
-    fs.writeFile('.gitignore', 'dist \nnode_modules')
+    fs.writeFile('.gitignore', 'dist\nnode_modules')
         .then(() => console.log('Создано: файл .gitignore'))
         .catch((error) => console.log(error));
 
