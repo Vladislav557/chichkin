@@ -1,50 +1,32 @@
-import fs from 'fs';
-import cb from './callback';
+import { promises as fs } from 'fs';
 
-const func = () => {
-    fs.readFile('package.json', 'utf8', (err, data) => {
-        if (err) {
-            console.log(err);
-            return;
-        } 
-        const packageObj = JSON.parse(data);
-        const updateData = JSON.stringify({ ...packageObj, "files": ["dist"], "scripts": {
-            "build": "NODE_ENV=production babel src --out-dir dist",
-            "prepublishOnly": "npm run build"
-        }});
-        fs.writeFile('package.json', updateData, (err) => {
-            if (err) {
-                console.log(err);
-                return;
-            }
-        });
-    });
-};
+import changePackage from './changePackage';
+import cli from './cli_function';
+import { babel } from './template';
 
 export default () => {
-    fs.mkdir('./dist/bin', {recursive: true}, (err) => {
-        cb(err, {message: "Директории dist/bin созданы"});
-    });
 
-    fs.mkdir('./src/bin', {recursive: true}, (err) => {
-        cb(err, { message: "Папка src создана" });
+    fs.mkdir('dist')
+        .then(() => console.log("Директория dist создана"))
+        .catch((error) => console.log(error));
 
-        fs.writeFile('src/bin/index.js', '', (err) => {
-            if (err) throw err;
-            console.log('The file has been saved!');
-          });
-    });
+    fs.mkdir('src/bin')
+        .then(() => {
+            fs.writeFile('src/bin/index.js', '')
+                .then(() => console.log('index.js создан'))
+                .catch((error) => console.log(error));
+        }).catch((error) => console.log(error));
 
-    fs.writeFile('.gitignore', 'dist \n', (err1) => {
-        fs.appendFile('.gitignore', 'node_modules', (err2) => {
-            cb(err1 + err2, { message: '.gitignore создан' });
-        });
-    });
+    fs.writeFile('.gitignore', 'dist \n node_modules')
+        .then(() => console.log('.gitignore создан'))
+        .catch((error) => console.log(error));
 
-    fs.appendFile("babel.config.js", "module.exports = {presets: [[\"@babel/env\",{targets:{node: \"current\",firefox: \"60\",chrome: \"67\",safary: \"11.1\",},}],],}", (err) => {
-        cb(err, { message: 'Создан babel.config.js' });
-    });
+    fs.writeFile('babel.config.js', babel)
+        .then(() => console.log('babel.config.js создан'))
+        .catch((error) => console.log(error));
 
-    setTimeout(func, 1000);
+    setTimeout(cli, 100);
+    setTimeout(changePackage, 500);
 };
+
 
