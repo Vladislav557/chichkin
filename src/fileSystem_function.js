@@ -13,7 +13,7 @@ export default () => {
     fs.mkdir('src/bin', { recursive: true })
         .then(() => {
             fs.writeFile('src/bin/index.js', '')
-                .then(() => console.log('Создано: файл index.js'))
+                .then(() => console.log('Создано: директории src/bin \nСоздано: файл index.js'))
                 .catch((error) => console.log(error));
         }).catch((error) => console.log(error));
 
