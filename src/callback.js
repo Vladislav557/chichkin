@@ -3,8 +3,5 @@ export default (error, rest) => {
         console.log(error);
         return;
     } 
-    if (rest.message === "eslint") {
-        return rest.stdout;
-    }
     console.log(rest.message);
 };
