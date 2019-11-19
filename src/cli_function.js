@@ -31,5 +31,9 @@ export default () => {
     childProcess.exec('npm install --save-dev eslint', (error, stdout, stderr) => {
         cb(error, { stdout, stderr, message: "Добавленна зависимость: eslint" });
     });
+    // npx eslint --init
+    childProcess.exec('npx eslint --init', (error, stdout, stderr) => {
+        cb(error, { stdout, stderr, message: "eslint" })
+    });
 
 };
