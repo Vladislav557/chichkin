@@ -26,8 +26,8 @@ export default () => {
         .then(() => console.log('Создано: файл babel.config.js'))
         .catch((error) => console.log(error));
 
-    setTimeout(cli, 1000);
-    setTimeout(changePackage, 2000);
+    setTimeout(cli, 100);
+    setTimeout(changePackage, 5000);
 };
 
 

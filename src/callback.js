@@ -4,4 +4,4 @@ export default (error, rest) => {
         return;
     }
     console.log(rest.message);
-}
+};
