@@ -25,8 +25,8 @@ export default () => {
         .then(() => console.log('babel.config.js создан'))
         .catch((error) => console.log(error));
 
-    setTimeout(cli, 100);
-    setTimeout(changePackage, 500);
+    setTimeout(cli, 1000);
+    setTimeout(changePackage, 2000);
 };
 
 

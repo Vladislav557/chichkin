@@ -5,11 +5,11 @@ import cb from './callback';
 export default () => {
     // git init
     childProcess.exec('git init', (error, stdout, stderr) => {
-        cb(error, { stdout, stderr, message: "Установлена система контроля версий" });
+        cb(error, { stdout, stderr, message: "Инициализирован: git" });
     });
     // npm init
     childProcess.exec('npm init -y', (error, stdout, stderr) => {
-        cb(error, { stdout, stderr, message: 'npm инициализирован'} );
+        cb(error, { stdout, stderr, message: 'Инициализирован: npm'} );
     });
     // npm install --save-dev @babel/core
     childProcess.exec('npm install --save-dev @babel/core', (error, stdout, stderr) => {
