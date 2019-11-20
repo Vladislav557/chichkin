@@ -1,6 +1,6 @@
 {
   "name": "chichkin",
-  "version": "0.1.8",
+  "version": "0.1.9",
   "description": "This package was created for create basic structure of project",
   "keywords": [
     "chichka",
@@ -8,7 +8,9 @@
     "babel",
     "eslint",
     "structure",
-    "project"
+    "project", 
+    "hexlet",
+    "template"
   ],
   "main": "dist/bin/index.js",
   "bin": {

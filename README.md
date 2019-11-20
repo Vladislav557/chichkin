@@ -2,13 +2,13 @@
 
 ***
 
-This package was created for create basic structure my projects
+This package create basic project structure 
 
 ## What was he doing?
 * Created basic structure
 * Install dependences: babel, eslint
 * Configurate dependences
-* Added scripts: build, prepublishOnly
+* Added scripts: build, prepublishOnly, eslint --init
 
 ## Install
 * npm install -g chichkin
@@ -19,4 +19,8 @@ This package was created for create basic structure my projects
 ## Using
 * Create future directory for your project
 * Go to the directory
-* Write in your terminal: makeStruc and press enter
+* Write in your terminal: makeStruc 
+* Press enter
+
+## Gratitude
+* I express my grtitude Hexlet for his lessons
