@@ -3,13 +3,13 @@ import childProcess from 'child_process';
 import cb from './callback';
 
 export default () => {
-    // git init
-    childProcess.exec('git init', (error, stdout, stderr) => {
-        cb(error, { stdout, stderr, message: "Инициализирован: git" });
-    });
     // npm init
     childProcess.exec('npm init -y', (error, stdout, stderr) => {
         cb(error, { stdout, stderr, message: 'Инициализирован: npm'} );
+    });
+    // git init
+    childProcess.exec('git init', (error, stdout, stderr) => {
+        cb(error, { stdout, stderr, message: "Инициализирован: git" });
     });
     // npm install --save-dev @babel/core
     childProcess.exec('npm install --save-dev @babel/core', (error, stdout, stderr) => {

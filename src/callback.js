@@ -1,7 +1,5 @@
 export default (error, rest) => {
-    if (error) {
-        console.log(error);
-        return;
-    } 
+    if (error) throw new Error(error);
+    
     console.log(rest.message);
 };

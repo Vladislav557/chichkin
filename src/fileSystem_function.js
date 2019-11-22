@@ -24,9 +24,10 @@ export default () => {
 
     fs.writeFile('babel.config.js', template.babel)
         .then(() => console.log('Создано: файл babel.config.js'))
-        .then(() => cli())
-        .then(() => changePackage())
         .catch((error) => console.log(error));
+
+    setTimeout(cli, 100);
+    setTimeout(changePackage, 5000);
 };
 
 
