@@ -23,4 +23,4 @@ This package create basic project structure
 * Press enter
 
 ## Gratitude
-* I express my grtitude Hexlet for his lessons
+* I express my gratitude Hexlet for his lessons

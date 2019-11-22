@@ -1,6 +1,6 @@
 {
   "name": "chichkin",
-  "version": "0.1.9",
+  "version": "0.1.10",
   "description": "This package was created for create basic structure of project",
   "keywords": [
     "chichka",
@@ -25,7 +25,7 @@
     "type": "git",
     "url": "git+https://github.com/Vladislav557/chihckin.git"
   },
-  "author": "",
+  "author": "Vladislav Kiselev <trololo557@gmail.com>",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/Vladislav557/chihckin/issues"
